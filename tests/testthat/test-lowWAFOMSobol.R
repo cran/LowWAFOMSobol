@@ -17,18 +17,21 @@ test_that("test Low WAFOM Sobol Sequence points", {
   s <- 4
   m <- 10
   n <- 2^m
-  matrix <- lowWAFOMSobol.points(dimR=s, dimF2=m, count=n)
+  matrix <- lowWAFOMSobol.points(dimR=s, dimF2=m)
   expect_equal(nrow(matrix), n)
   expect_equal(ncol(matrix), s)
   expect_true(all(matrix < 1))
   expect_true(all(matrix > 0))
+  r2 <- c(0.674217, 0.522469, 0.777076, 0.645491)
+  expect_equal(matrix[2,], r2, tolerance=0.000001)
+  
 })
 
 test_that("test Low WAFOM Sobol Sequence points digitalShift", {
   s <- 4
   m <- 10
   n <- 2^m
-  matrix <- lowWAFOMSobol.points(dimR=s, dimF2=m, count=n, digitalShift=TRUE)
+  matrix <- lowWAFOMSobol.points(dimR=s, dimF2=m, digitalShift=TRUE)
   expect_equal(nrow(matrix), n)
   expect_equal(ncol(matrix), s)
   expect_true(all(matrix < 1))

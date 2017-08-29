@@ -7,10 +7,10 @@
 lowWAFOMSobol.dimF2MinMax(dimR)
 }
 \arguments{
-\item{dimR}{dimention.}
+\item{dimR}{dimension.}
 }
 \value{
-supportd minimum and maximum F2 dimension number
+supported minimum and maximum F2 dimension number
 }
 \description{
 get minimum and maximum F2 dimension number.
